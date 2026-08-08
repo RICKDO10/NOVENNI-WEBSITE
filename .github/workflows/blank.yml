@@ -1,11 +1,9 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Lovable Auto Backup
 
 on: 
 schedule: 
-- cron: "0 * * * *"   # runs every hour 
-workflow_dispatch:       # allows manual run
+- cron: "0 * * * *"     # runs every hour 
+workflow_dispatch:
 
 jobs: 
 backup: 
@@ -21,4 +19,4 @@ steps:
       git config user.email "actions@github.com"
       git add .
       git commit -m "Auto backup from Lovable $(date)" || echo "No changes to commit"
-      git add .git commit-m "Auto backup f git push
+      git push
