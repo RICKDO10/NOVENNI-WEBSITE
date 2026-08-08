@@ -21,4 +21,4 @@ steps:
       git config user.email "actions@github.com"
       git add .
       git commit -m "Auto backup from Lovable $(date)" || echo "No changes to commit"
-      git pushd deploy your project.
+      git add .git commit-m "Auto backup f git push
