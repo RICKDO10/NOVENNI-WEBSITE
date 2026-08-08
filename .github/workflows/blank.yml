@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Lovable Auto Backup
+
+on: 
+schedule: 
+- cron: "0 * * * *"   # runs every hour 
+workflow_dispatch:       # allows manual run
+
+jobs: 
+backup: 
+runs-on: ubuntu-latest
+
+steps:
+  - name: Checkout repo
+    uses: actions/checkout@v3
+
+  - name: Commit and push Lovable changes
+    run: |
+      git config user.name "github-actions"
+      git config user.email "actions@github.com"
+      git add .
+      git commit -m "Auto backup from Lovable $(date)" || echo "No changes to commit"
+      git pushd deploy your project.
